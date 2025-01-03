@@ -1,4 +1,4 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +39,78 @@
 
 .read-the-docs {
   color: #888;
+} */
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
+
+body {
+  margin: 0;
+  background: #2c2c2c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 6rem);
+  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  outline: none; /* Removes the outline on focus */
+  background-color: #3b3b3b;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-in-out;
+  border: none; /* Removes the white border */
+}
+
+.calculator-grid > button:hover,
+.calculator-grid > button:focus {
+  background-color: #555;
+}
+
+.calculator-grid > button.orange {
+  background-color: orange;
+  color: white;
+}
+
+.calculator-grid > button.orange:hover,
+.calculator-grid > button.orange:focus {
+  background-color: #ff8c00;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, .75);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: .75rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, .75);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
+}
+
+
